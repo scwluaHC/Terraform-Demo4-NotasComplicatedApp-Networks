@@ -21,10 +21,16 @@ variable "amis" {
   }
 }
 
-variable "availability_zones" {
-  description = "AZs"
-  type        = list(any)
-  default     = ["us-east-1a", "us-east-1b"]
+variable "availability_zones_1" {
+  description = "AZ1"
+  type        = string
+  default     = "us-east-1a"
+}
+
+variable "availability_zones_2" {
+  description = "AZ2"
+  type        = string
+  default     = "us-east-1b"
 }
 
 # VPC and network specific
@@ -139,8 +145,8 @@ variable "alb_name" {
 }
 
 # Terraform specific
-variable "path" {
-  description = "tfstate path"
-  type        = string
-  default     = "../vault-admin-workspace/terraform.tfstate"
-}
+#variable "path" {
+#  description = "tfstate path"
+#  type        = string
+#  default     = "../vault-admin-workspace/terraform.tfstate"
+#}

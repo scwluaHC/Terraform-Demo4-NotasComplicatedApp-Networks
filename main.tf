@@ -22,7 +22,7 @@ resource "aws_subnet" "web_subnet1" {
   vpc_id                  = aws_vpc.vpc.id
   cidr_block              = "10.0.2.0/24"
   map_public_ip_on_launch = true
-  availability_zone       = var.availability_zones[0]
+  availability_zone       = var.availability_zones_1
   tags = {
     Name = var.pub_subnet1
   }
@@ -32,7 +32,7 @@ resource "aws_subnet" "web_subnet2" {
   vpc_id                  = aws_vpc.vpc.id
   cidr_block              = "10.0.3.0/24"
   map_public_ip_on_launch = true
-  availability_zone       = var.availability_zones[1]
+  availability_zone       = var.availability_zones_2
   tags = {
     Name = var.pub_subnet2
   }
@@ -122,7 +122,7 @@ resource "aws_subnet" "rds_subnet1" {
   vpc_id                  = aws_vpc.vpc.id
   cidr_block              = "10.0.0.0/24"
   map_public_ip_on_launch = false
-  availability_zone       = var.availability_zones[0] # [x] is the list position in var
+  availability_zone       = var.availability_zones_1 # [x] is the list position in var
   tags = {
     Name = var.rds_subnet1
   }
@@ -132,7 +132,7 @@ resource "aws_subnet" "rds_subnet2" {
   vpc_id                  = aws_vpc.vpc.id
   cidr_block              = "10.0.1.0/24"
   map_public_ip_on_launch = false
-  availability_zone       = var.availability_zones[1] # [x] is the list position in var
+  availability_zone       = var.availability_zones_2 # [x] is the list position in var
   tags = {
     Name = var.rds_subnet2
   }
