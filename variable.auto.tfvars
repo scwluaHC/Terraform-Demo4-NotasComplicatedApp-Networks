@@ -1,146 +1,47 @@
-# AWS specific
-variable "region" {
-  description = "Value of the regions"
-  type        = string
-  default     = "us-east-1"
-}
+region = "us-east-1"
 
-variable "instance_type" {
-  description = "Value of the instance type"
-  type        = string
-  default     = "t2.micro"
-}
+instance_type = "t2.micro"
 
-variable "amis" {
-  description = "Map for ami type"
-  type        = map(any)
-  default = {
-    "ap-southeast-1" = "ami-0dc5785603ad4ff54"
-    "us-east-1"      = "ami-0dc2d3e4c0f9ebd18"
-    "us-east-2"      = "ami-0ba62214afa52bec7"
-  }
-}
+amis = "ami-0dc2d3e4c0f9ebd18"
 
-variable "availability_zones" {
-  description = "AZs"
-  type        = list(any)
-  default     = ["us-east-1a", "us-east-1b"]
-}
+availability_zones_1 = "us-east-1a"
 
-# VPC and network specific
-variable "allowed_cidr_blocks" {
-  type    = list(any)
-  default = ["0.0.0.0/0"]
-}
+availability_zones_2 = "us-east-1b"
 
-variable "vpc_name" {
-  type    = string
-  default = "scwlua-demo-vpc"
-}
+allowed_cidr_blocks = "0.0.0.0/0"
 
-variable "ig_name" {
-  type    = string
-  default = "scwlua-demo-ig"
-}
+vpc_name = "scwlua-demo-vpc"
 
-variable "pub_subnet1" {
-  type    = string
-  default = "scwlua-pub-subnet1"
-}
+ig_name = "scwlua-demo-ig"
 
-variable "pub_subnet2" {
-  type    = string
-  default = "scwlua-pub-subnet2"
-}
+pub_subnet1 = "scwlua-pub-subnet1"
 
-variable "web_sg1" {
-  type    = string
-  default = "scwlua-web-sg1"
-}
+pub_subnet2 = "scwlua-pub-subnet2"
 
-variable "web_sg2" {
-  type    = string
-  default = "scwlua-web-sg2"
-}
+web_sg1 = "scwlua-web-sg1"
 
-# RDS specific
-variable "database_name" {
-  description = "Name of database"
-  type        = string
-  default     = "scwluadb"
-}
+web_sg2 = "scwlua-web-sg2"
 
-variable "database_user" {
-  description = "DB username"
-  type        = string
-  default     = "scwlua"
-}
+database_name = "scwluadb"
 
-variable "database_password" {
-  description = "DB user password"
-  type        = string
-  default     = "Testing123"
-}
+database_user = "scwlua"
 
-variable "endpoint" {
-  description = "Value of the endpoint"
-  type        = string
-  default     = "http://mydb.scwlua.com"
-}
+database_password = "Testing123"
 
-variable "rds_subnet1" {
-  description = "rds subnet1"
-  type        = string
-  default     = "db-subnet1"
-}
+endpoint = "http://mydb.scwlua.com"
 
-variable "rds_subnet2" {
-  description = "rds subnet2"
-  type        = string
-  default     = "db-subnet2"
-}
+rds_subnet1 = "db-subnet1"
 
-variable "rds_subnet_grp" {
-  description = "rds group"
-  type        = string
-  default     = "db-subnet-grp"
-}
+rds_subnet2 = "db-subnet2"
 
-variable "sg_for_rds" {
-  description = "rds sg group"
-  type        = string
-  default     = "db-sg"
-}
+rds_subnet_grp = "db-subnet-grp"
 
-variable "db_instance_name" {
-  description = "db instance name"
-  type        = string
-  default     = "scwlua-db"
-}
+sg_for_rds = "db-sg"
 
-# EC2 specific
-variable "instance_name" {
-  description = "EC2 name"
-  type        = string
-  default     = "mynew-appserver"
-}
+db_instance_name = "scwlua-db"
 
-# LB specific
-variable "alb_sg" {
-  description = "ALB SG name"
-  type        = string
-  default     = "scwlua-alb-sg"
-}
+instance_name = "mynew-appserver"
 
-variable "alb_name" {
-  description = "ALB name"
-  type        = string
-  default     = "scwlua-alb"
-}
+alb_sg = "scwlua-alb-sg"
 
-# Terraform specific
-variable "path" {
-  description = "tfstate path"
-  type        = string
-  default     = "../vault-admin-workspace/terraform.tfstate"
-}
+alb_name = "scwlua-alb"
