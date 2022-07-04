@@ -1,5 +1,5 @@
 provider "aws" {
-  region = var.region
+  region = "us-east-1"
 }
 
 ## DEPLOYMENT PORTION TO AWS ##
