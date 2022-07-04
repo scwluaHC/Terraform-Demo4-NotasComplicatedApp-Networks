@@ -13,13 +13,9 @@ variable "instance_type" {
 
 variable "amis" {
   description = "Map for ami type"
-  type        = map(any)
-  default = {
-    "ap-southeast-1" = "ami-0dc5785603ad4ff54"
-    "us-east-1"      = "ami-0dc2d3e4c0f9ebd18"
-    "us-east-2"      = "ami-0ba62214afa52bec7"
+  type        = string
+  default = "ami-0dc2d3e4c0f9ebd18"
   }
-}
 
 variable "availability_zones_1" {
   description = "AZ1"
@@ -35,8 +31,7 @@ variable "availability_zones_2" {
 
 # VPC and network specific
 variable "allowed_cidr_blocks" {
-  type    = list(any)
-  default = ["0.0.0.0/0"]
+  default = "0.0.0.0/0"
 }
 
 variable "vpc_name" {
