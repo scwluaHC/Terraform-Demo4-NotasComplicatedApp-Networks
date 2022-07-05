@@ -1,31 +1,31 @@
 # Outputs file
 
 output "aws_vpc_id" {
-   value = "${aws_vpc.vpc.id}"
+   value = "${module.scwlua-NotasComplicatedApp-NetworkModule.aws_vpc_id}"
 }
 
 output "aws_websubnet1_id" {
-   value = "${aws_subnet.web_subnet1.id}"
+   value = "${module.scwlua-NotasComplicatedApp-NetworkModule.aws_websubnet1_id}"
 }
 
 output "aws_websubnet2_id" {
-   value = "${aws_subnet.web_subnet2.id}"
+   value = "${module.scwlua-NotasComplicatedApp-NetworkModule.aws_websubnet2_id}"
 }
 
 output "aws_web_sg1_id" {
-   value = "${aws_security_group.web_sg1.id}"
+   value = "${module.scwlua-NotasComplicatedApp-NetworkModule.aws_web_sg1_id}"
 }
 
 output "aws_web_sg2_id" {
-   value = "${aws_security_group.web_sg2.id}"
+   value = "${module.scwlua-NotasComplicatedApp-NetworkModule.aws_web_sg2_id}"
 }
 
 output "aws_db_subnet_grp_id" {
-   value = "${aws_db_subnet_group.rds.id}"
+   value = "${module.scwlua-NotasComplicatedApp-NetworkModule.aws_db_subnet_grp_id}"
 }
 
 output "aws_db_sg_id" {
-   value = "${aws_security_group.rds.id}"
+   value = "${module.scwlua-NotasComplicatedApp-NetworkModule.aws_db_sg_id}"
 }
 
 #output "aws_vpc_id" {
