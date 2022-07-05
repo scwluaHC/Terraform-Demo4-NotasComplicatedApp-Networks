@@ -8,8 +8,4 @@ module "scwlua-NotasComplicatedApp-NetworkModule" {
   source  = "app.terraform.io/scwlua-test/scwlua-NotasComplicatedApp-NetworkModule/aws"
   version = "1.0.0"
    region = var.region
-   tags = {
-    Name        = "scwlua-vpc-${var.region}"
-    Environment = "development"
-  }
 }
